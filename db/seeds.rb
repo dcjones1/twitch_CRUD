@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+<<<<<<< HEAD
 User.delete_all
 
 a = User.create(username: "Artem", popularity: 6, streaming: true)
@@ -16,3 +17,15 @@ Stream.create(title: "Dota 2", views: 150000, user: a)
 Stream.create(title: "Fortnite", views: 60000, user: m)
 Stream.create(title: "CS:GO", views: 15000, user: a)
 Stream.create(title: "PUBG", views: 80000, user: m)
+=======
+Stream.destroy_all
+User.delete_all
+
+Stream.create(title: "Dota 2", views: 150000, )
+Stream.create(title: "Fortnite", views: 60000)
+Stream.create(title: "CS:GO", views: 15000)
+Stream.create(title: "PUBG", views: 80000)
+
+User.create(username: "Artem", popularity: 6, streaming: true)
+User.create(username: "Mila", popularity: 7, streaming: false)
+>>>>>>> origin/user_form
