@@ -1,17 +1,15 @@
 <table>
   <thead>
     <tr>
-      <% @streams.first.attributes.each do |attr| %>
-      <th><%= attr[0].titleize %></th>
-      <% end %>
+      <th>Title</th>
+      <th>Views</th>
     </tr>
   </thead>
   <tbody>
     <% @streams.each do |stream| %>
     <tr>
-      <% stream.attributes.each do |attr| %>
-      <td><%= stream[attr[0]] %></td>
-      <% end %>
+      <td><%= link_to stream.title, stream_path(stream) %></td>
+      <td><%= stream.views %></td>
     </tr>
     <% end %>
   </tbody>
