@@ -1,9 +1,14 @@
-<h2>Username:</h2>
-<p><%=@user.username %></p>
-<h2>Popularity:</h2>
-<p><%= @user.popularity %></p>
-<h2>Streaming</h2>
-<p><%= @user.streaming %></p>
+<p><h3>Username:</h3>
+<%=@user.username %>
+<h3>Popularity:</h3>
+<%= @user.popularity %>
+<h3>Streaming</h3>
+<%= @user.streaming %></p>
+<h3>Streams by this user:</h3>
+<% @user.streams.each do |stream| %>
+<%=link_to stream.title, stream_path(stream) %>
+<%= stream.views %>
+<% end  %>
 
 <%= link_to "List of all users", users_path %><br>
 <%= link_to "Edit user", edit_user_path(@user) %><br>

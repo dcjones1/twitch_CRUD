@@ -1,9 +1,19 @@
 <%= form_for @user do |f| %>
-<%= f.label :username %>
-<%= f.text_field :username %>
-<%= f.label :popularity %>
-<%= f.select :popularity, (1..10) %>
-<%= f.label :streaming %>
-<%= f.check_box :streaming %>
-<%= f.submit %>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+      <%= f.label :popularity %>
+      <%= f.select :popularity, (1..10) %>
+      <%= f.label :streaming %>
+      <%= f.check_box :streaming %>
+
+            <h3>Add a Streaming Category:</h3>
+            <%= f.fields_for :streams do |stream|%>
+              <%= stream.label :title %>
+              <%= stream.text_field :title %>
+              <%= stream.label :views %>
+              <%= stream.text_field :views %>
+            <% end %>
+            <br>
+            <br>
+            <%= f.submit %>
 <% end  %>

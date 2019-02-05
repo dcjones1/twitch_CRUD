@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.streams.build
   end
 
   def create
@@ -34,7 +35,8 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :popularity, :streaming)
+    params.require(:user).permit(:username, :popularity, :streaming,
+    streams_attributes: [:title, :views])
   end
 
   def find_user

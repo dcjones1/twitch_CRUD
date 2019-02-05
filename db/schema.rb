@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 2019_02_05_210845) do
   create_table "streams", force: :cascade do |t|
     t.string "title"
     t.integer "views"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_streams_on_user_id"
   end
@@ -23,6 +25,8 @@ ActiveRecord::Schema.define(version: 2019_02_05_210845) do
     t.string "username"
     t.integer "popularity"
     t.boolean "streaming"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
