@@ -1,9 +1,20 @@
-<%= form_for :stream do |f| %>
-<%= f.label :title, 'Title:' %>
-<%= f.text_field :title %><br>
+<%= form_for @stream do |f| %>
+  <%= f.label :title, 'Title:' %>
+  <%= f.text_field :title %><br>
 
-<%= f.label :views, 'Views:'%>
-<%= f.text_field :views %><br>
+  <%= f.label :views, 'Views:'%>
+  <%= f.text_field :views %><br>
 
-<%= f.submit %>
+  <%= f.fields_for :user do |user| %>
+    <%= user.label :username %>
+    <%= user.text_field :username %><br>
+
+    <%= user.label :popularity %>
+    <%= user.select :popularity, (1..10).to_a, { include_blank: "Select the user's popularity" } %><br>
+
+    <%= user.label :streaming %>
+    <%= user.select :streaming, [['Yes', true],['No', false],], { include_blank: "Currently streaming?"} %><br>
+    <% end %>
+
+  <%= f.submit %>
 <% end %>
