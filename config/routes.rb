@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   resources :streams
-  root 'streams#index'
+  root 'users#index'
   resources :users
 end

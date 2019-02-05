@@ -15,4 +15,4 @@ Stream.destroy_all
 Stream.create(title: "Dota 2", views: 150000, user: a)
 Stream.create(title: "Fortnite", views: 60000, user: m)
 Stream.create(title: "CS:GO", views: 15000, user: a)
-Stream.create(title: "PUBG", views: 80000, user: m)
+Stream.create(title: "PUBG", views: 80000, user_id: m)

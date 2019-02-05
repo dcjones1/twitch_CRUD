@@ -3,10 +3,12 @@ class StreamsController < ApplicationController
 
   def new
     @stream = Stream.new
+    @stream.build_user
   end
 
   def create
     @stream = Stream.create(stream_params)
+    @stream.build_user(stream_params[:user_attributes])
     if @stream.save
       redirect_to @stream
     else
@@ -40,6 +42,6 @@ class StreamsController < ApplicationController
   end
 
   def stream_params
-    params.require(:stream).permit(:title, :views)
+    params.require(:stream).permit(:title, :views, user_attributes: [:id, :username, :popularity, :streaming])
   end
 end
