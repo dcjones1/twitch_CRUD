@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  popularity: 1
+  streaming: false
+
+two:
+  username: MyString
+  popularity: 1
+  streaming: false
