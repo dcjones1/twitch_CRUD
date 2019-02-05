@@ -1,0 +1,6 @@
+<h1>Stream</h1>
+<h2>Title: <%= @stream.title %></h2>
+<h2>Views: <%= @stream.views %></h2>
+<%= link_to "List All Streams", streams_path %><br>
+<%= link_to "Edit Stream", edit_stream_path(@stream) %><br>
+<%= link_to "Delete Stream", @stream, method: :delete %><br>
