@@ -4,8 +4,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :username
       t.integer :popularity
       t.boolean :streaming
-
-      t.timestamps
     end
   end
 end

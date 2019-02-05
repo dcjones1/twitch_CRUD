@@ -3,8 +3,6 @@ class CreateStreams < ActiveRecord::Migration[5.2]
     create_table :streams do |t|
       t.string :title
       t.integer :views
-
-      t.timestamps
     end
   end
 end
