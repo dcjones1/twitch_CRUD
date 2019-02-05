@@ -1,0 +1,21 @@
+<h2>List of all users</h2>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Popularity</th>
+    <th>Streaming</th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to user.username, user_path(user) %></td>
+      <td><%= user.popularity %></td>
+      <td><%= user.streaming %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="link_to_new_user">
+<p><%= link_to "Create a new user", new_user_path%></p>
+</div>
